@@ -1,0 +1,2 @@
+ErrorDocument 404 /zc3283/IGME235/error/error.html
+DirectoryIndex noterror.html

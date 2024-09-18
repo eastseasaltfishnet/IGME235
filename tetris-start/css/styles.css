@@ -1,0 +1,23 @@
+figure
+{
+    max-width: 650px;
+    margin: 0 auto;
+}
+figure img{
+    width: 100%;
+}
+
+header,main,footer{
+    width: 90vw;
+    margin: 0 auto;
+}
+
+#tetlist{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+div.txt{
+    flex:1 0 345px;
+    border: 1px solid black;
+}

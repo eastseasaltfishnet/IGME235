@@ -18,6 +18,30 @@ header,main,footer{
 }
 
 div.txt{
-    flex:1 0 345px;
+    flex:1 0 300px;
     border: 1px solid black;
+}
+
+div.txt img{
+    width: 60%;
+}
+
+div.txt.long img{
+    width: 80%;
+}
+
+
+div.txt.square img{
+    width: 40%;
+}
+
+span.name{
+    display:block;
+    margin: 0.8em 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+div.aliases{
+    text-align: left;
 }

@@ -1,0 +1,72 @@
+#mainTitle{
+    color:#ff9872 ;
+    margin:20px;
+}
+
+#secondHeader{
+    color:#ff9872 ;
+    margin:20px;
+    padding: 20px;
+}
+
+
+.customLink{
+    margin: 20px;
+    color: #b2c15f;
+}
+
+.customLink:hover {
+    color: #f5f398 !important;
+}
+
+.customLink:visited {
+    color: #4a7d63;
+}
+
+.customLink:focus {
+    outline: 2px solid #99d14b;
+}
+
+.customLink:active {
+    color: #305a32;
+}
+
+
+.textContent {
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #ff9872;
+    text-align: justify;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+h1, h2 {
+    border-bottom: 2px solid #6C6068;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #315b6b;
+    color: #ff9872;
+    margin: 20px;
+    padding: 20px;
+}
+
+
+
+img {
+    display: block;
+    margin: 20px auto;
+    width: 250px;  
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);  
+}
+
+
+ul {
+    color:#b2c15f;
+}

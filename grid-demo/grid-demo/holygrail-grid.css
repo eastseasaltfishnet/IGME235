@@ -1,0 +1,75 @@
+/**************************************
+General Formatting (Leave This Alone!)
+**************************************/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    /* sets base font size for rem sizing */
+    font-size: 16px;
+    font-family: Calibri, Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+header,
+footer {
+    /* centers header and footer content horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #86af49;
+}
+
+nav,
+aside,
+article {
+    padding: .5rem;
+}
+
+nav, aside {
+    background-color: #b5e7a0;
+    border: 1px dotted black; 
+}
+
+/*****************
+Grid Formatting  
+*****************/
+
+div#wrapper{
+    display:grid;
+     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 
+    "header"
+    "nav"
+    "main"
+    "sidebar"
+    "footer";
+    height:100vh;
+}
+
+@media screen and(min-width:700px){
+div#wrapper{
+    display: grid;
+    grid-template-rows: 10fr 10fr 10fr;
+    grid-template-columns: 20% 1fr 20%;
+    grid-template-areas:
+    "header  header  header"
+    "navbar conetent sidebar"
+    "footer  footer  footer";
+    /*height:100vh;*/
+}
+
+
+header{grid-area:header}
+nav{grid-area: navbar}
+article{grid-area: content}
+aside{grid-area:sidebar }
+footer{grid-area: footer}
+
+}

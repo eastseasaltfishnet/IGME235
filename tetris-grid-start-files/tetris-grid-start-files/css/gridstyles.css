@@ -1,0 +1,146 @@
+/* It starts completely empty. I wish you luck. */
+
+body{
+    margin:1rem;
+}
+
+#wrapper{
+    display: grid;
+    grid-template-areas: 
+        "logo"
+        "menu"
+        "intro"
+        "playground"
+        "footer";
+}
+
+h1.game {
+    grid-area: logo;
+}
+ul.menu {
+    grid-area: menu;
+}
+#introduction {
+    grid-area: intro;
+}
+#tetgrid {
+    grid-area: playground;
+}
+footer {
+    grid-area: footer;
+}
+
+
+@media screen and (min-width: 850px){
+    #wrapper{
+        grid-template-areas:
+            "logo       intro"
+            "menu       menu"
+            "playground playground"
+            "footer     footer";
+        grid-template-columns: 500px 1fr;
+        grid-template-rows: 345px auto auto auto;
+
+
+    }
+
+} 
+
+
+h1.game {
+    width: 500px;
+    height: 180px;
+    background: url('../images/tetris-logo.png') no-repeat;
+    text-indent: -9999px;
+}
+
+
+#tetgrid {
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(6, 100px);
+}
+/* yellow */
+#o {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+/* light blue */
+#i {
+    grid-column: 3 / span 4;
+    grid-row: 1 / span 1;
+}
+
+/* red */
+#z {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 2;
+}
+
+/* purple */
+#t {
+    grid-column: 3 / span 2;
+    grid-row: 2 / span 2;
+}
+
+/* orange */
+#l {
+    grid-column: 5 / span 2;
+    grid-row: 3 / span 2;
+}
+
+/* green */
+#s {
+    grid-column: 4 / span 2;
+    grid-row: 5 / span 2;
+}
+
+/* blue */
+#j {
+    grid-column: 1 / span 3;
+    grid-row: 5 / span 2;
+}
+
+
+img {
+    transition-property: transform;
+    transition-duration: 2s;
+}
+
+img:hover {
+    transform: rotate(-90deg); 
+}
+
+.menu li {
+    position: relative; 
+}
+
+.menu ul {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    background: rgb(0, 0, 0);
+    padding: 10px;
+    list-style: none;
+    margin: 0px;
+    z-index: 10;
+}
+
+.menu li:hover > ul {
+    display: block;
+}
+
+.menu ul li {
+    width: 00%;
+}
+
+.menu ul li a {
+    background: darkgray;
+    padding: 5px;
+}
+
+.menu ul li a:hover {
+    background: red;
+    color: yellow;
+}

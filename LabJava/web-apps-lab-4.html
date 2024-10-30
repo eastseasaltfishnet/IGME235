@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Web Apps-4-HW</title>
+    <style>
+        body {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Favorites</h1>
+    <h2>My Favorite Colors</h2>
+    <ol id="colorsList">
+
+    </ol>
+
+    <h2>My Favorite Foods</h2>
+    <ol id="foodsList">
+
+    </ol>
+
+    <h2>My Favorite Links</h2>
+
+    <ol id="linksList">
+
+    </ol>
+
+    <script>
+        "use strict";
+        let colors = ["red", "green", "blue", "purple", "pink"];
+        let foods = ["sashimi", "undo", "pizza", "apple"];
+
+        // Optional - can you figure out how to pull both the key AND the value
+        // from the `links` object literal?
+        let links = {
+            "RIT": "http://www.rit.edu",
+            "bilibili": "https://www.bilibili.com/",
+            "pinterest": "https://www.pinterest.com/"
+        }
+
+        function createList(listElement, array=["puppydogs", "butterflies", "lollipops"]) {
+            // you write the rest
+            for (let item of array) {
+                let listItem = document.createElement("li");
+                listItem.innerHTML = item;
+                listElement.appendChild(listItem);
+            }
+        }
+
+        createList(document.getElementById("colorsList"),colors);
+        createList(document.getElementById("foodsList"), foods);
+
+
+
+      for (let site in links) {
+            let linkItem = document.createElement("li");
+            let linkElement = document.createElement("a");
+
+            linkElement.href = links[site];
+            linkElement.innerHTML = site;
+            linkElement.target = "_blank";
+
+            linkItem.appendChild(linkElement);
+            document.getElementById("linksList").appendChild(linkItem);
+        }
+    </script>
+</body>
+
+</html>

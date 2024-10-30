@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>DOM-3</title>
+    <style>
+        body {
+            border: 1px solid gray;
+        }
+
+        p b {
+            transform: rotate(20deg)
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Page</h1>
+    <h2>Info</h2>
+    <h2>Pictures</h2>
+    <h2>More Info</h2>
+    <p>Blah <b>Blah</b> Blah</p>
+    <p>Blah <b>Blah</b> Blah</p>
+    <p id="lastParagraph">Blah <b>Blah</b> Blah</p>
+    <footer>Copyright &copy; <b>20XX</b></footer>
+    <script>
+        "use strict";
+
+        // add your own code here.
+        document.querySelector("h1").innerHTML = "My UFO PAge";
+
+        document.querySelectorAll("h2")[0].innerHTML = "My UFO INFO";
+
+        document.querySelectorAll("h2")[1].innerHTML = "UFO Picuters";
+
+        document.querySelectorAll("h2")[2].innerHTML = "";
+
+
+
+        document.body.style.fontFamily = "sans-serif";
+        document.body.style.color = "#FF6347";
+
+
+        let firstParagraph = document.querySelector("p");
+        firstParagraph.innerHTML = 'Report your UFO sightings here: <a href="http://www.nuforc.org" target="_blank">http://www.nuforc.org</a>';
+        firstParagraph.style.color = "green";
+        firstParagraph.style.fontWeight = "bold";
+        firstParagraph.style.fontSize = "2em";
+        firstParagraph.style.textTransform = "uppercase";
+        firstParagraph.style.textShadow = "3px 2px #A44";
+
+
+        document.querySelectorAll("p")[1].innerHTML = "";
+
+        document.querySelector("#lastParagraph").innerHTML = '<img src="https://cdn.pixabay.com/photo/2021/03/06/14/55/ufo-6073925_1280.jpg" alt="UFO">';
+
+        let currentYear = new Date().getFullYear();
+        document.querySelector("footer").innerHTML = `Copyright &copy; 2024 Zhihao Chen`;
+
+    </script>
+</body>
+
+</html>

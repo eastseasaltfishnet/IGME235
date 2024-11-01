@@ -4,14 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>random-phrases</title>
+    <title>Tonight's Random Dinner</title>
+
+    <link rel="stylesheet" href="../random-phrases-assigmernt/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Brygada+1918:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <div class="container">
+        <header>
+            <h1>Tonight's Random Dinner</h1>
+        </header>
 
-    <h1>Random Phrases</h1>
+        <div class="content">
+            <div class="random-phrase" id="phrase-display">
+                Click the button to see what is today's dinner!
+            </div>
 
-    <footer>Copyright &copy; <b> 2024 Zhihao Chen</b></footer>
+            <button onclick="displayQuote()">Show Random Phrase</button>
+        </div>
+
+        
+        <footer>Copyright &copy; <b> 2024 Zhihao Chen</b></footer>
+    </div>
+
+    <script>
+        const phrases = [
+            "pizza and apple juice",
+            "rice and fried chicken",
+            "beef and potato",
+            "cup noodle haha",
+            "Maybe just some fruits tonight?"
+        ];
+
+        function displayQuote() {
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            document.getElementById("phrase-display").textContent = phrases[randomIndex];
+        }
+
+        window.onload = displayQuote;
+    </script>
 </body>
 
 </html>

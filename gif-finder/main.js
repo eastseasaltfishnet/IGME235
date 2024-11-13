@@ -8,23 +8,87 @@ let displayTerm = "";
 // 3
 function searchButtonClicked() {
     console.log("searchButtonClicked() called");
+    
+    const GIPHY_URL = "https://api.giphy.com/v1/gifs/search?";
+    const GIPHY_KEY = "5PuWjWVnwpHUQPZK866vd7wQ2qeCeqg7";
+
+    let url = GIPHY_URL;
+    url += "api_key=" + GIPHY_KEY;
+
+    let term = document.querySelector("#searchterm").value;
+    displayTerm = term;
+
+    term = term.trim();
+
+    term = encodeURIComponent(term);
+
+    if (term.length < 1) return;
+
+    url += "&q=" + term;
+
+    let limit = document.querySelector("#limit").value;
+    url += "&limit=" + limit;
+
+    document.querySelector("#status").innerHTML = "<b>Searching for '" + displayTerm + "'</b>";
+
+    console.log(url);
+
+    getData(url)
 
 }
-function dataLoad(){
+function dataLoaded(e) {
+
+    let xhr = e.target;
+
+    console.log(xhr.responseText);
+    let obj = JSON.parse(xhr.responseText);
+
+    if (!obj.data || obj.data.length == 0) {
+        document.querySelector("#status").innerHTML = "<b>No result found fro " + displayTerm + "'</b>";
+        return;
+    }
+
+    let results = obj.data;
+    console.log("results.length = " + results.length);
+    let bigString = "";
 
 
+
+    for (let i = 0; i < results.length; i++) {
+        let result = results[i];
+
+        let smallURL = result.images.fixed_width_downsampled.url;
+        if (!smallURL) smallURL = "images/no-image-found.png";
+
+        let url = result.url;
+        let rating = result.rating ? result.rating.toUpperCase() : "NA";
+
+        let line = `<div class='result'><img src='${smallURL}' title='${result.id}' />`;
+        line += `<p>Rating: ${rating}</p>`;
+        line += `<span><a target='_blank' href='${url}'>View on Giphy</a></span></div>`;
+        line += `</div>`;
+
+        bigString += line
+
+    }
+
+
+    document.querySelector("#content").innerHTML = bigString;
+
+    document.querySelector("#status").innerHTML = "<b>Success!</b><p><i>Here are " + results.length + " results for '" + displayTerm + "'</i></p>"
 }
-for (let i = 0; i < result.length; i++) {
 
-    let result = results[i];
+function getData(url) {
+    let xhr = new XMLHttpRequest();
 
-    let samllURL = result.images.fixed_width_small.url;
-    if (!samllURL) samllURL = "images/no-image-found.png";
+    xhr.onload = dataLoaded;
+    xhr.onerror = dataError;
 
-    let url = result.url;
-    let rating = reuslt.reating.toUpperCase();
-
-    let line = '<div class='result'><img src='${samllURL}' titles'${result.title}'/>';
-    line +='<span><a target='_blank' href='${url}'>${result.title}</a></span>'
+    xhr.open("GET", url);
+    xhr.send();
 }
 
+function dataError(e) {
+    console.error("An error occurred while retrieving data.");
+    document.querySelector("#status").innerHTML = "<b>Error: Failed to retrieve data. Please try again later.</b>";
+}

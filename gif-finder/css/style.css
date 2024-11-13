@@ -3,7 +3,7 @@
 }
 
 header {
-    background: url(images/cats.jpg);
+    background: url(../images/cats.jpg);
     height: 195px;
 }
 
@@ -17,10 +17,9 @@ header h1 {
 
 #status {
     font-style: italic;
-    height: 32px;
 }
 
-.result {
+/*.result {
     position: relative;
     height: 175px;
     width: 100px;
@@ -29,15 +28,9 @@ header h1 {
     padding: 5px;
     margin-left: 10px;
     margin-bottom: 10px;
+    
 }
 
-.result img {
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
-    display: block;
-
-}
 
 .result span {
     font-size: 12px;
@@ -47,7 +40,7 @@ header h1 {
 
 .result audio {
     width: 130px;
-}
+}*/
 
 button {
     display: inline-block;
@@ -69,7 +62,7 @@ button {
 button.green {
     border-color: #8fc800;
     background: #8fc800;
-    background: linear-gradient(top, #8fc800 0%, #438c00 100%);
+    background: linear-gradient(to top, #8fc800 0%, #438c00 100%);
 }
 
 button:hover {
@@ -93,8 +86,9 @@ button:focus {
 #content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2em;
-    margin: 0 5%;
+    gap: 40px 20px ;
+    margin: 0 auto;
+    width:  90%;
 }
 
 #content div.result {
@@ -105,11 +99,21 @@ button:focus {
 #content div.result img {
     box-shadow: rgba(0,0,0,0.6)0 13px 15px -12px;
 }
-#content div.result{
+/*#content div.result{
     
+}*/
+
+.result{
+
+    display: flex;
+    flex-direction: column;
+}
+.result img{
+    width: 100%;
 }
 
 .result span{
+    order: -1;
     font-size: 1.1em;
     font-weight: bold;
     display: block;

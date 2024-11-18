@@ -10,27 +10,39 @@
 </head>
 
 <body>
-    <h1>Get Random Dog Images</h1>
-    <p id="enterAlert">Welcom to use the random dog image!If you just want random image, just enter nothing</p>
-
-
-    <input type="text" id="breedInput" placeholder="Enter dog breed!">
-    <button onclick="fetchDogImage()">Fetch!</button>
-
-    <!--some common breed-->
-    <div id="breedButtons">
-        <button onclick="selectBreed('akita')">Akita</button>
-        <button onclick="selectBreed('beagle')">Beagle</button>
-        <button onclick="selectBreed('boxer')">Boxer</button>
-        <button onclick="selectBreed('bulldog')">Bulldog</button>
-        <button onclick="selectBreed('husky')">Husky</button>
-        <button onclick="selectBreed('poodle')">Poodle</button>
-        <button onclick="selectBreed('retriever')">Retriever</button>
-        <button onclick="selectBreed('spaniel')">Spaniel</button>
-        <button onclick="selectBreed('terrier')">Terrier</button>
+    <!-- 左侧边栏 -->
+    <div id="sidebar">
+        <h2>Menu</h2>
+        <button onclick="viewFavorites()">Favorite</button>
     </div>
 
-    <div id="content"></div>
+    <!-- 主内容区域 -->
+    <div id="main-content">
+        <!-- 搜索栏 -->
+        <div id="search-container">
+            <input type="text" id="breedInput" placeholder="Enter dog breed!">
+            <button id="fetchButton" onclick="fetchDogImage()">Fetch!</button>
+        </div>
+
+        <!-- 品种按钮区 -->
+        <div id="breedButtons">
+            <button onclick="selectBreed('akita')">Akita</button>
+            <button onclick="selectBreed('beagle')">Beagle</button>
+            <button onclick="selectBreed('boxer')">Boxer</button>
+            <button onclick="selectBreed('bulldog')">Bulldog</button>
+            <button onclick="selectBreed('husky')">Husky</button>
+            <button onclick="selectBreed('poodle')">Poodle</button>
+            <button onclick="selectBreed('retriever')">Retriever</button>
+            <button onclick="selectBreed('spaniel')">Spaniel</button>
+            <button onclick="selectBreed('terrier')">Terrier</button>
+        </div>
+
+        <!-- 标题和内容展示区 -->
+        <h1>Get Random Dog Images</h1>
+        <p id="enterAlert">Here are some images for your selected breed!</p>
+
+        <div id="content"></div>
+    </div>
 </body>
 
 </html>

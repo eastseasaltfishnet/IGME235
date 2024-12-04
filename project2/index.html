@@ -10,22 +10,25 @@
 </head>
 
 <body>
-    <!-- 左侧边栏 -->
-    <div id="sidebar">
+    <!-- side bar -->
+    <header id="sidebar">
         <h2>Menu</h2>
-        <button onclick="viewFavorites()">Favorite</button>
-    </div>
+        <nav>
+            <button onclick="viewFavorites()">Favorite</button>
+            <button onclick="seeAllBreeds()">See all breeds</button>
+        </nav>
+    </header>
 
-    <!-- 主内容区域 -->
-    <div id="main-content">
-        <!-- 搜索栏 -->
-        <div id="search-container">
+    <main id="main-content">
+        <!-- search container -->
+        <section id="search-container">
+            <h2>Search</h2>
             <input type="text" id="breedInput" placeholder="Enter dog breed!">
             <button id="fetchButton" onclick="fetchDogImage()">Fetch!</button>
-        </div>
+        </section>
 
-        <!-- 品种按钮区 -->
-        <div id="breedButtons">
+        <!-- default breed button -->
+        <section id="breedButtons">
             <button onclick="selectBreed('akita')">Akita</button>
             <button onclick="selectBreed('beagle')">Beagle</button>
             <button onclick="selectBreed('boxer')">Boxer</button>
@@ -35,14 +38,17 @@
             <button onclick="selectBreed('retriever')">Retriever</button>
             <button onclick="selectBreed('spaniel')">Spaniel</button>
             <button onclick="selectBreed('terrier')">Terrier</button>
-        </div>
+        </section>
 
-        <!-- 标题和内容展示区 -->
+        <!-- title -->
         <h1>Get Random Dog Images</h1>
-        <p id="enterAlert">Here are some images for your selected breed!</p>
 
-        <div id="content"></div>
-    </div>
+        <p id="enterAlert"></p>
+
+        <section id="content">
+            <h2>Images</h2>
+        </section>
+    </main>
 </body>
 
 </html>

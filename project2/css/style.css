@@ -12,6 +12,7 @@ body {
     color: #333;
 }
 
+/*side bar*/
 #sidebar {
     width: 200px;
     background-color: #f0f0f0;
@@ -41,6 +42,7 @@ body {
 #sidebar button {
     width: 100%;
     padding: 10px;
+    margin:5px;
     border: 2px solid #1722EC;
     background-color: white;
     color: #1722EC;
@@ -56,6 +58,9 @@ body {
     box-shadow: 0 4px 12px rgba(23, 34, 236, 0.3);
 }
 
+
+
+/*main*/
 #main-content {
     flex: 1;
     padding: 20px;
@@ -161,6 +166,26 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.fav-button {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 32px;
+    font-weight: bold;
+    color: gold;
+    cursor: pointer;
+    z-index: 10;
+    text-shadow: 1px 1px 2px black;
+}
+
+.img-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px; 
+}
+
 @media (max-width: 768px) {
     #sidebar {
         width: 150px;
@@ -174,3 +199,4 @@ body {
         column-count: 3;
     }
 }
+

@@ -1,0 +1,8 @@
+# Ignore BlenderFile folder
+BlenderFile/
+
+# Ignore all .zip files
+*.zip
+
+# Ignore all .glb files
+*.glb
